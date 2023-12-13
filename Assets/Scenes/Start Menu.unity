@@ -387,6 +387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05487a8c6f07302449028e37fd19fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: 
+  highScore: 0
 --- !u!4 &425633880
 Transform:
   m_ObjectHideFlags: 0
@@ -708,7 +710,7 @@ GameObject:
   - component: {fileID: 1025556716}
   - component: {fileID: 1025556715}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -778,7 +780,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1025556716}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1621133871}
+        m_TargetAssemblyTypeName: MenuUIHandler, Assembly-CSharp
+        m_MethodName: StartNew
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1025556716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1062,7 @@ GameObject:
   - component: {fileID: 1621133869}
   - component: {fileID: 1621133868}
   - component: {fileID: 1621133867}
+  - component: {fileID: 1621133871}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1138,6 +1153,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1621133871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621133866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfb487cf89de78549a98b2e9fadd6f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameField: {fileID: 1764788075}
 --- !u!1 &1764788073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,7 +1179,7 @@ GameObject:
   - component: {fileID: 1764788076}
   - component: {fileID: 1764788075}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: Name Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,6 +8,7 @@ public class DataHandler : MonoBehaviour
     public static DataHandler Instance;
 
     public string playerName;
+    public string previousWinner;
     public int highScore;
 
     private void Awake()
@@ -28,13 +29,14 @@ public class DataHandler : MonoBehaviour
     class SaveData
     {
         public string playerName;
+        public string previousWinner;
         public int highScore;
     }
 
     public void SaveScore()
     {
         SaveData data = new SaveData();
-        data.playerName = playerName;
+        data.previousWinner = previousWinner;
         data.highScore = highScore;
 
         string json = JsonUtility.ToJson(data);
@@ -50,7 +52,7 @@ public class DataHandler : MonoBehaviour
             string json = File.ReadAllText(path);
             SaveData data = JsonUtility.FromJson<SaveData>(json);
 
-            playerName = data.playerName;
+            previousWinner = data.previousWinner;
             highScore = data.highScore;
         }
     }
